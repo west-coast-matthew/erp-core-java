@@ -10,6 +10,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Ingredient {
@@ -18,6 +21,9 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 	
+	@NotNull(message = "Value must be present for attribute 'name'")
+	@Min(1)
+	@Max(50)
 	private String name;
 	
 	private boolean isActive = true;

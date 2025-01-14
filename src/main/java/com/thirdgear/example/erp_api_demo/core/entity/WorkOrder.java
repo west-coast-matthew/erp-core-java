@@ -15,6 +15,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name="work-order")
@@ -26,6 +27,9 @@ public class WorkOrder{
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="workOrder")
 	private List<Movement>movements = new ArrayList();
+	
+	@NotNull(message="Status value must be present for 'work order' attribute")
+	private WorkOrderStatus workOrderStatus;
 	
 	public Long getId() {
 		return id;
