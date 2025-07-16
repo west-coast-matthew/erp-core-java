@@ -4,3 +4,25 @@
 # Ignore Gradle build output directory
 build
 /target/
+
+.DS_Store
+
+# Compiled class files
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Maven specific
+target/
+.mvn/
+mvn-wrapper.jar
+.classpath
+.project
+.settings/
+
+# Logs and reports
+logs/
+reports/
